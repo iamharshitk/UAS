@@ -19,6 +19,7 @@ Houses represented by red BGR(0,0,255) or blue BGR(255,0,0) coloured triangles.
 -pip install opencv-python
 
 Enter the path to the folder where the dataset is saved in 'line 28'
+Example: "C:\\Users\\XYZ\\*.png"
 
 ## Result
 Successfully return images with clear differentiation between burnt and unburnt grass
