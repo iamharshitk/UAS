@@ -17,7 +17,7 @@ red_bgr=np.array([0,0,255])
 blue_bgr=np.array([255,0,0])
 
 
-#Initialising lists and a dictionary to store data
+#Initialising lists to store data
 Hb_and_Hg=[]
 Pb_and_Pg=[]
 priority_order=[]
@@ -38,7 +38,7 @@ for file in glob.glob(img_path):
  output_img=img.copy()
  copy2=img.copy()
 
- #Converting the image from RGB to HSV 
+ #Converting the image from BGR to HSV 
  hsv_img=cv.cvtColor(img,cv.COLOR_BGR2HSV)
 
  #Making lists to store the locations of the detected houses
@@ -123,7 +123,7 @@ for file in glob.glob(img_path):
         accuracy=0.25*cv.arcLength(i, True)
         vertices=cv.approxPolyDP(i, accuracy, True)
 
-        #Setting conditions for the detection of a triangle with an area greater than 500 oixels
+        #Setting conditions for the detection of a triangle with an area greater than 500 pixels
         if len(vertices)==3 and cv.contourArea(vertices)>500:
             xyz_list.append(vertices)
 
@@ -163,6 +163,7 @@ for file in glob.glob(img_path):
  priority_order.append(rescue_ratio)
  image_by_ratio.append([file,rescue_ratio])
 
+ #Printing the location of the current image
  print(file)
 
  
@@ -172,13 +173,16 @@ for file in glob.glob(img_path):
  cv.destroyAllWindows
 
 
-
+#Printing the output
 print("Number of houses on the burnt grass and the number of houses on the green:\n")
 print(Hb_and_Hg,"\n")
 print("The total priority of houses on the burnt grass and the total priority of houses on the green grass:\n")
 print(Pb_and_Pg,"\n")
 print("Rescue ratio of priority:\n")
 print(priority_order,"\n")
+
+
+#~~~~~~~~~~~~~~~~END OF CODE~~~~~~~~~~~~~~~~
 
    
 
