@@ -25,7 +25,9 @@ image_by_ratio=[]
 
 
 #Enter the path of the folder where the images are stored
+#Example: "C:\\Users\\XYZ\\*.png"
 img_path="Path"
+
 
 
 #Using a for loop to process images
