@@ -172,7 +172,7 @@ for file in glob.glob(img_path):
  #Opening the output image
  cv.imshow(file, output_img)
  cv.waitKey(0)
- cv.destroyAllWindows
+ cv.destroyAllWindows()
 
 
 #Printing the output
